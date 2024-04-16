@@ -1,6 +1,6 @@
 import {
   Banner,
-  useApi,
+  useSettings,
   useTranslate,
   reactExtension,
 } from '@shopify/ui-extensions-react/checkout';
@@ -12,11 +12,14 @@ export default reactExtension(
 
 function Extension() {
   const translate = useTranslate();
-  const { extension } = useApi();
+  const { banner_title: merchantTitle, banner_description: merchantDescription, collapsible, banner_status: merchantStatus } = useSettings();
+  const title = merchantTitle ?? translate('banner_title')
+  const description = merchantDescription ?? translate('banner_description')
+  const status = merchantStatus ?? 'success'
 
   return (
-    <Banner title="checkout-extension-banner">
-      {translate('welcome', {target: extension.target})}
+    <Banner title={title} collapsible={collapsible} status={status}>
+      {description}
     </Banner>
   );
 }

@@ -7,7 +7,7 @@ api_version = "2024-04"
 
 [[extensions]]
 type = "ui_extension"
-name = "checkout-extension-banner"
+name = "Custom banner"
 handle = "checkout-extension-banner"
 
 # Controls where in Shopify your extension will be injected,
@@ -43,9 +43,27 @@ api_access = true
 # your extension. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
 
-# [extensions.settings]
-# [[extensions.settings.fields]]
-# key = "banner_title"
-# type = "single_line_text_field"
-# name = "Banner title"
-# description = "Enter a title for the banner"
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "banner_title"
+type = "single_line_text_field"
+name = "Banner title"
+
+[[extensions.settings.fields]]
+key = "banner_description"
+type = "multi_line_text_field"
+name = "Banner description"
+
+[[extensions.settings.fields]]
+key = "banner_status"
+type = "single_line_text_field"
+name = "Banner status"
+[[extensions.settings.fields.validations]]
+name = "choices"
+value = "[\"info\", \"success\", \"warning\", \"critical\"]"
+
+[[extensions.settings.fields]]
+key = "collapsible"
+type = "boolean"
+name = "Show collapsible description."
+description = "Display controls to expand or collapse the banner description."
