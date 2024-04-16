@@ -63,7 +63,7 @@ name = "choices"
 value = "[\"info\", \"success\", \"warning\", \"critical\"]"
 
 [[extensions.settings.fields]]
-key = "collapsible"
+key = "banner_collapsible"
 type = "boolean"
 name = "Show collapsible description."
 description = "Display controls to expand or collapse the banner description."
