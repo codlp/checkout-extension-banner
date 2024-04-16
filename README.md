@@ -4,7 +4,7 @@ This Shopify application is a checkout UI extension, meaning an app you can disp
 
 ## Features
 
-It's a banner, with several elements that you can customize:
+It's a banner containing several elements that the merchant can customize without coding, directly through the Checkout Editor;
 
 - Title
 - Description
