@@ -21,6 +21,6 @@ To run this application locally:
 
 ## Developer resources
 
-- [Introduction to Shopify apps](https://shopify.dev/docs/apps/getting-started)
-- [Extension-only apps](https://shopify.dev/docs/apps/app-extensions/extension-only-apps)
+- [Checkout UI extensions](https://shopify.dev/docs/api/checkout-ui-extensions)
+- [Library of components for checkout UI extensions](https://shopify.dev/docs/api/checkout-ui-extensions/2024-01/components)
 - [Shopify CLI](https://shopify.dev/docs/apps/tools/cli)
