@@ -4,13 +4,16 @@ This Shopify application is a checkout UI extension, meaning an app you can disp
 
 ## Features
 
-It's a banner containing several elements that the merchant can customize without coding, directly through the Checkout Editor:
+This banner is located on the Checkout page. It contains several elements that the merchant can customize without coding, directly through the Checkout Editor:
 
 - Title
 - Description
 - Status: info, success, warning, or critical
 - Collapsible
-- Localization support: English or French
+
+This banner supports localization (English and French).
+
+If the merchant chooses to have a localized banner content, then the banner's title and description will not be added through the Checkout Editor. They will be added through a JSON metafield on the Shop model, containing all the translations. See comments in the code for more information.
 
 ## Running this application
 
