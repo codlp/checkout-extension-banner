@@ -14,18 +14,11 @@ export default reactExtension(
 
 function Extension() {
   const translate = useTranslate();
-  /* Localization
-  If your Shopify has only 1 language, the banner's content will be added by the merchant through the settings in the Checkout Editor
+  // Localization
+  // If your Shopify has only 1 language, the banner's content will be added by the merchant through the settings in the Checkout Editor
   const {
     banner_title: merchantTitle,
     banner_description: merchantDescription,
-    banner_collapsible: merchantCollapsible,
-    banner_status: merchantStatus
-  } = useSettings();
-  */
-
-  // If your Shopify has more than 1 language, the banner's translated content will be added by the merchant through a metafield (type JSON) on the Shop model
-  const {
     banner_collapsible: merchantCollapsible,
     banner_status: merchantStatus
   } = useSettings();
@@ -33,9 +26,15 @@ function Extension() {
   // Set default values
   const collapsible = merchantCollapsible ?? false
   const status = merchantStatus ?? 'success';
-  let title = translate('banner_title');
-  let description = translate('banner_description');
+  let title = merchantTitle ?? translate('banner_title');
+  let description = merchantDescription ?? translate('banner_description');
 
+  /* If your Shopify has more than 1 language, the banner's translated content will be added by the merchant through a metafield (type JSON) on the Shop model
+  const {
+    banner_collapsible: merchantCollapsible,
+    banner_status: merchantStatus
+  } = useSettings();
+  
   const language = useLanguage();
   const currentLocale = language?.isoCode?.split('-')[0].toLowerCase();
 
@@ -53,7 +52,8 @@ function Extension() {
       description = json[currentLocale].banner_description;
     }
   }
-
+  */
+ 
   return (
     <Banner title={title} collapsible={collapsible} status={status}>
      {description}
