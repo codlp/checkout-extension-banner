@@ -32,27 +32,28 @@ api_access = true
 # products, customers, and more. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
 
-# [[extensions.metafields]]
-# namespace = "my_namespace"
-# key = "my_key"
-# [[extensions.metafields]]
-# namespace = "my_namespace"
-# key = "my_other_key"
+[[extensions.metafields]]
+namespace = "checkout-banner-translations"
+key = "config"
 
 # Defines settings that will be collected from merchants installing
 # your extension. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
 
-[extensions.settings]
-[[extensions.settings.fields]]
-key = "banner_title"
-type = "single_line_text_field"
-name = "Banner title"
+# Localization
+# If your Shopify store has only 1 language, you can uncomment these lines, so that the merchant can define the banner's content directly through the Checkout Editor.
+# [extensions.settings]
+# [[extensions.settings.fields]]
+# key = "banner_title"
+# type = "single_line_text_field"
+# name = "Banner title"
 
-[[extensions.settings.fields]]
-key = "banner_description"
-type = "multi_line_text_field"
-name = "Banner description"
+# [[extensions.settings.fields]]
+# key = "banner_description"
+# type = "multi_line_text_field"
+# name = "Banner description"
+
+# If your Shopify store has more than 1 language, leave the above lines commented. The banner's translated content (title, description) will not be defined in the settings. They will be defined through a metafield (type JSON) on the Shop model.
 
 [[extensions.settings.fields]]
 key = "banner_status"
